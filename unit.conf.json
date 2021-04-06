@@ -1,0 +1,33 @@
+{
+    "listeners": {
+            "*:8080": {
+                    "pass": "routes/main"
+            }
+    },
+
+    "applications": {
+            "java": {
+                    "user": "unit",
+                    "group": "unit",
+                    "type": "java",
+                    "classpath": [],
+                    "webapp": "/path/to/build/libs/demo-0.0.1-SNAPSHOT.war"
+            }
+
+    },
+
+    "routes": {
+            "main": [
+                    {
+                    "match": {
+                                    "scheme": "http",
+                                    "uri": "/test"
+                            },
+
+                            "action": {
+                                    "pass": "applications/java"
+                            }
+                    }
+            ]
+    }
+}
