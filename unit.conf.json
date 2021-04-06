@@ -10,6 +10,9 @@
                     "user": "unit",
                     "group": "unit",
                     "type": "java",
+                    "environment": {
+                            "Deployment": "0.0.1"
+                    },
                     "classpath": [],
                     "webapp": "/path/to/build/libs/demo-0.0.1-SNAPSHOT.war"
             }
@@ -21,7 +24,7 @@
                     {
                     "match": {
                                     "scheme": "http",
-                                    "uri": "/test"
+                                    "uri": ["/test*", "/test/*"]
                             },
 
                             "action": {
